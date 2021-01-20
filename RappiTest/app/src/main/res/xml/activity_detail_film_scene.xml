@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000" />
+
+    <Transition
+        motion:constraintSetEnd="@+id/swipe"
+        motion:constraintSetStart="@id/end"
+        motion:duration="1000">
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:onTouchUp="autoComplete"
+            motion:touchAnchorSide="bottom" />
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/imageViewPoster"
+                motion:percentX="-0.1" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/toolbarBackground">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="?actionBarSize"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+        <Constraint android:id="@+id/progressBarDetail">
+            <PropertySet android:alpha="1" />
+            <Transform android:elevation="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/imageViewBackdropPath">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="216dp"
+                android:layout_marginTop="64dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/recyclerImages">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewGallery">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewDetailLanguage">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewDetailPopularity">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewDetailReleaseDate">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+
+        <Constraint android:id="@+id/imageViewPoster">
+            <Layout
+                android:layout_width="96dp"
+                android:layout_height="128dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="168dp"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="@+id/imageViewBackdropPath" />
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewTitle">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="96dp"
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/imageViewPoster"
+                motion:layout_goneMarginStart="16dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/toolbarBackground">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="?actionBarSize"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+        <Constraint android:id="@+id/progressBarDetail">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+        <Constraint android:id="@+id/imageViewBackdropPath">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="216dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/recyclerImages">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewGallery">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@+id/textViewDetailLanguage">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewDetailPopularity">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewDetailReleaseDate">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/imageViewPoster">
+            <Layout
+                android:layout_width="96dp"
+                android:layout_height="128dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                motion:layout_constraintBottom_toBottomOf="@+id/imageViewBackdropPath"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/imageViewBackdropPath" />
+            <PropertySet android:alpha="1" />
+            <Transform android:elevation="1dp" />
+        </Constraint>
+        <Constraint android:id="@+id/textViewTitle">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/imageViewPoster"
+                motion:layout_goneMarginStart="16dp" />
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="#000000" />
+        </Constraint>
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/swipe">
+        <Constraint android:id="@+id/toolbarBackground">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="?actionBarSize"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:visibility="visible" />
+            <Transform android:elevation="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/progressBarDetail">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/imageViewBackdropPath">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="216dp"
+                motion:layout_constraintBottom_toTopOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent" />
+            <Transform android:elevation="1dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/imageViewPoster">
+            <Layout
+                android:layout_width="96dp"
+                android:layout_height="128dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                motion:layout_constraintBottom_toTopOf="parent"
+                motion:layout_constraintStart_toStartOf="parent" />
+            <Transform android:elevation="0dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewTitle">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintBottom_toBottomOf="@id/imageViewBackButton"
+                motion:layout_constraintStart_toEndOf="@id/imageViewBackButton"
+                motion:layout_constraintTop_toTopOf="@id/imageViewBackButton" />
+            <Transform android:elevation="3dp" />
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="#FFFFFF" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textViewDescription">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/textViewDetailPopularity" />
+        </Constraint>
+
+    </ConstraintSet>
+</MotionScene>

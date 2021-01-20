@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/bank_account_disabled_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/ui_3m"
+        android:paddingLeft="@dimen/ui_3m"
+        android:paddingRight="@dimen/ui_3m"
+        android:paddingTop="@dimen/ui_3m">
+
+        <ImageView
+            android:id="@+id/warning_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_home_black_24dp"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ui_2m"
+            android:layout_toRightOf="@+id/warning_image"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/warning_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4sp"
+                android:text="No puedes hacer este retiro"/>
+
+            <TextView
+                android:id="@+id/warning_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ui_05m"
+                android:lineSpacingExtra="4sp"
+                android:text="El CUIT y CBU deben corresponder a la misma persona."/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/ui_3m"
+        android:paddingRight="@dimen/ui_3m"
+        android:paddingBottom="@dimen/ui_3m"
+        android:paddingTop="@dimen/ui_3m">
+
+        <ImageView
+            android:id="@+id/imageview_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ui_3m"/>
+
+        <TextView
+            android:id="@+id/bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ui_3m"
+            android:gravity="center_horizontal"
+            android:textColor="#666666"
+            android:textSize="20sp"
+            android:text="BBVA Francés"/>
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titular"/>
+
+        <TextView
+            android:id="@+id/label_name_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ui_3m"
+            android:text="Luciano SinNombre"/>
+
+        <TextView
+            android:id="@+id/label_type_account_cbu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Cuenta Corriente - CBU"/>
+
+        <TextView
+            android:id="@+id/label_cbu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ui_3m"
+            android:text="3924802843209842367890"/>
+
+        <Button
+            android:id="@+id/add_bank_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar cuenta bancaria"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

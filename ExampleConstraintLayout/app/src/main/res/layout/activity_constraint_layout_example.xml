@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/warning_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_home_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/warning_title" />
+
+    <TextView
+        android:id="@+id/warning_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ui_2m"
+        android:layout_marginEnd="@dimen/ui_2m"
+        android:layout_marginBottom="4dp"
+        android:lineSpacingExtra="4sp"
+        android:text="No puedes hacer este retiro"
+        app:layout_constraintBottom_toTopOf="@+id/warning_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/warning_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/warning_content"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/ui_2m"
+        android:layout_marginEnd="@dimen/ui_2m"
+        android:layout_marginBottom="48dp"
+        android:lineSpacingExtra="4sp"
+        android:text="El CUIT y CBU deben corresponder a la misma persona."
+        app:layout_constraintBottom_toTopOf="@+id/bank_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/warning_image"
+        app:layout_constraintTop_toBottomOf="@id/warning_title" />
+
+    <ImageView
+        android:id="@+id/imageview_bank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bank_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bank_name" />
+
+    <TextView
+        android:id="@+id/bank_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:text="BBVA Francés"
+        android:textColor="#666666"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/label_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/warning_content" />
+
+    <TextView
+        android:id="@+id/label_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Titular"
+        app:layout_constraintBottom_toTopOf="@id/label_name_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank_name" />
+
+    <TextView
+        android:id="@+id/label_name_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="@dimen/ui_3m"
+        android:text="Luciano SinNombre"
+        app:layout_constraintBottom_toTopOf="@+id/label_type_account_cbu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_name" />
+
+    <TextView
+        android:id="@+id/label_type_account_cbu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center_horizontal"
+        android:text="Cuenta Corriente - CBU"
+        app:layout_constraintBottom_toTopOf="@+id/label_cbu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_name_user" />
+
+    <TextView
+        android:id="@+id/label_cbu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ui_3m"
+        android:text="3924802843209842367890"
+        app:layout_constraintBottom_toTopOf="@+id/add_bank_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_type_account_cbu" />
+
+    <Button
+        android:id="@+id/add_bank_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar cuenta bancaria"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_cbu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
