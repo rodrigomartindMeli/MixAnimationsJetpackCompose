@@ -10,23 +10,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     Column(modifier = Modifier.padding(16.dp)) {
-        Row(verticalGravity = Alignment.CenterVertically) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Icon(
-                asset = Icons.Outlined.Notifications, tint = Color.Blue
+                Icons.Outlined.Notifications, tint = Color.Blue
             )
             GetTextDemo(Color.Red)
         }
-        Row (verticalGravity = Alignment.CenterVertically){
+        Row (verticalAlignment = Alignment.CenterVertically){
             GetTextDemo(Color.Blue)
             Icon(
-                asset = Icons.Outlined.Notifications, tint = Color.Blue
+                Icons.Outlined.Notifications, tint = Color.Blue
             )
             GetTextDemo(Color.Green)
         }

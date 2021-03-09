@@ -6,6 +6,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -72,15 +73,14 @@ fun getSecondaryFeatures(): List<Feature> {
 fun GetItemFeature(feature: Feature, tintColor: Color, textColor: Color, modifier: Modifier) {
     val imageQR = vectorResource(feature.image)
     Column(
-        modifier = Modifier.widthIn(maxWidth = 64.dp),
-        horizontalGravity = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Icon(
-            asset = imageQR,
+            vectorResource(feature.image),
             tint = tintColor,
             modifier = modifier
         )
-        Text(feature.name, textAlign = TextAlign.Center, color = textColor)
+        Text(feature.name, color = textColor, textAlign = TextAlign.Center)
     }
 }
 
@@ -95,8 +95,8 @@ fun GetSecundaryFeatures() {
             .fillMaxWidth()
     ) {
         Box(
-            padding = 8.dp,
-            gravity = Alignment.Center
+            modifier = Modifier.padding(8.dp),
+            Alignment.Center
         ) {
             Column {
                 Row(
